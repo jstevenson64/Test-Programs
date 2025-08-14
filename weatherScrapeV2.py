@@ -1,6 +1,10 @@
 import requests
+from flask import Flask, render_template, request
 from bs4 import BeautifulSoup as bs
-zip =input("what zipcode?: ")
+
+app = Flask(__name__)
+
+zip = "77954" #input("what zipcode?: ") 
 
 url = "https://www.timeanddate.com/weather/@z-us-"+zip+"/hourly"
 page = requests.get(url)
@@ -39,4 +43,9 @@ print('chance of rain: ' + rain)
 print()
 
 
+@app.route("/", methods=["GET","POST"])
+def index():
+    return render_template("index.html")
 
+if __name__ == "__main__":
+    app.run(debug=True)
