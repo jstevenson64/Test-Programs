@@ -28,7 +28,7 @@ rain = data[7].get_text() #rain chance
 
 chance = data[8]
 
-print('')
+print()
 print('date: '+dateTime)
 print('temp: '+temp)
 print('weather: '+ weather)
@@ -36,6 +36,7 @@ print('feels like: '+feels)
 print('wind: '+wind)
 print('humidity: '+ humid)
 print('chance of rain: ' + rain)
+print()
 
 
 
