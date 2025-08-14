@@ -1,8 +1,8 @@
 import requests
 from bs4 import BeautifulSoup as bs
+zip =input("what zipcode?: ")
 
-
-url = "https://www.timeanddate.com/weather/@z-us-77954/hourly"
+url = "https://www.timeanddate.com/weather/@z-us-"+zip+"/hourly"
 page = requests.get(url)
 soup = bs(page.content, 'html.parser')
 #print(soup.prettify())
