@@ -1,11 +1,32 @@
 <html>
     <head>
         <style>
-            body {background-color: bisque;}
-            h1 {text-align: center; color: darkslategray;}
+            body {background-color: beige;}
+            h1 {text-align: center; color: black;}
+            h2{text-align: center;}
+
+            .main-display {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                /*min-height: 50vh;*/
+            }
+        
         </style>
     </head>
     <body >
         <h1>Hello everyone</h1>
+        <divs class="main-display">
+            <p style="text-align:justify;">
+                <b>Time and Date:</b> {{info.dateTime}} <br>
+                <b>Temperature:</b> {{info.temp}}<br>
+                <b>Feels like:</b> {{info.feels}}<br>
+                <b>Weather type:</b>{{info.weather}}<br>
+                <b>Humidity:</b> {{info.humid}}<br>
+                <b>Chance of rain:</b> {{info.rain}}
+            </p>
+        </div>
+        
     </body>
 </html>

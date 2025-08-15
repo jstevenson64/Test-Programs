@@ -30,22 +30,33 @@ humid = data[6].get_text()  #humiidity
 
 rain = data[7].get_text() #rain chance
 
-chance = data[8]
+info = {
+    "dateTime" : dateTime.strip(),
+    "temp" : temp.strip(),
+    "weather" : weather.strip(),
+    "feels" : feels.strip(),
+    "wind" : wind.strip(),
+    "humid":humid.strip(),
+    "rain":rain.strip()
+}
+    
 
 print()
-print('date: '+dateTime)
-print('temp: '+temp)
-print('weather: '+ weather)
-print('feels like: '+feels)
-print('wind: '+wind)
-print('humidity: '+ humid)
-print('chance of rain: ' + rain)
-print()
+print('date: '+dateTime.strip())
+print('temp: '+temp.strip())
+print('weather: '+ weather.strip())
+print('feels like: '+feels.strip())
+print('wind: '+wind.strip())
+print('humidity: '+ humid.strip())
+print('chance of rain: ' + rain.strip())
+print('\n\n\n\n')
+print(info)
 
 
 @app.route("/", methods=["GET","POST"])
 def index():
-    return render_template("index.html")
+    return render_template("index.html", info = info)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == "__main__":  
+   app.run(debug=True)
+
