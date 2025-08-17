@@ -1,8 +1,13 @@
 import requests
+import tkinter as tk
 from bs4 import BeautifulSoup as bs
 
+root = tk.Tk()
+root.title("Weather Scraper")
 
-zip = input("Please enter a zipcode: ")
+
+
+zip = '77954'
 
 url = "https://www.timeanddate.com/weather/@z-us-"+zip+"/hourly"
 page = requests.get(url)
@@ -28,17 +33,6 @@ humid = data[6].get_text()  #humiidity
 
 rain = data[7].get_text() #rain chance
 
-info = {
-    "dateTime" : dateTime.strip(),
-    "temp" : temp.strip(),
-    "weather" : weather.strip(),
-    "feels" : feels.strip(),
-    "wind" : wind.strip(),
-    "humid":humid.strip(),
-    "rain":rain.strip()
-}
-    
-
 print()
 print('date: '+dateTime.strip())
 print('temp: '+temp.strip())
@@ -50,4 +44,10 @@ print('chance of rain: ' + rain.strip())
 print('\n')
 print('Link to forecast: ' + url)
 
+zipLabel = tk.Label(root, text=dateTime + '\n' + temp + '\n' + weather + '\n' + feels + "\n" 
+                    + wind + '\n' + humid + '\n' + rain)
+zipLabel.pack()
 
+
+
+root.mainloop()
