@@ -33,16 +33,16 @@ humid = data[6].get_text()  #humiidity
 
 rain = data[7].get_text() #rain chance
 
-print()
-print('date: '+dateTime.strip())
-print('temp: '+temp.strip())
-print('weather: '+ weather.strip())
-print('feels like: '+feels.strip())
-print('wind: '+wind.strip())
-print('humidity: '+ humid.strip())
-print('chance of rain: ' + rain.strip())
-print('\n')
-print('Link to forecast: ' + url)
+#print()
+#print('date: '+dateTime.strip())
+#print('temp: '+temp.strip())
+#print('weather: '+ weather.strip())
+#print('feels like: '+feels.strip())
+#print('wind: '+wind.strip())
+#print('humidity: '+ humid.strip())
+#print('chance of rain: ' + rain.strip())
+#print('\n')
+#print('Link to forecast: ' + url)
 
 zipLabel = tk.Label(root, text=dateTime + '\n' + temp + '\n' + weather + '\n' + feels + "\n" 
                     + wind + '\n' + humid + '\n' + rain)
