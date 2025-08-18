@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup as bs
 
 root = tk.Tk()
 root.geometry("450x300")
+root.configure(background='#131417')
 root.title("Weather Scraper")
-
 
 
 zip = '77954'
@@ -56,8 +56,9 @@ info = ('date: '+dateTime.strip() +
         '\n\n\nLink to forecast: ' + url
         )
 
-zipLabel = tk.Label(root, text=info, justify='left')
+zipLabel = tk.Label(root, text=info, justify='left', background='#131417', fg="white")
 zipLabel.pack(pady=30)
+
 exitButton  = tk.Button(root, text="Exit", command=root.destroy)
 exitButton.pack(pady=20, padx=100)
 
