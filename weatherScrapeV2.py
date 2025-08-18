@@ -3,6 +3,7 @@ import tkinter as tk
 from bs4 import BeautifulSoup as bs
 
 root = tk.Tk()
+root.geometry("600x450")
 root.title("Weather Scraper")
 
 
@@ -46,8 +47,9 @@ rain = data[7].get_text() #rain chance
 
 zipLabel = tk.Label(root, text=dateTime + '\n' + temp + '\n' + weather + '\n' + feels + "\n" 
                     + wind + '\n' + humid + '\n' + rain)
-zipLabel.pack()
-
+zipLabel.pack(pady=40)
+exitButton  = tk.Button(root, text="Exit", command=root.destroy)
+exitButton.pack(pady=20)
 
 
 root.mainloop()
